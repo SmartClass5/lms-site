@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   pullPolicy: IfNotPresent
   repository: 142373294051.dkr.ecr.us-east-1.amazonaws.com/lms-site
-  version: main-d1948b8
+  version: main-18f8107
 
 imagePullSecrets: []
 nameOverride: ""
