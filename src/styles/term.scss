@@ -1,0 +1,68 @@
+.privacy,
+.term{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: #f1f1f1;
+
+    .privacy-header,
+    .term-header{
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+
+        > div {
+            margin: 0 auto;
+            max-width: 1200px;
+            height: 80px;
+            line-height: 80px;
+            font-size: 25px;
+            font-weight: 700;
+            text-align: left;
+
+            a {
+                color: #000;
+            }
+        }
+    }
+
+    .privacy-wrap,
+    .term-wrap {
+        margin: 100px auto 50px;
+        max-width: 1200px;
+    }
+
+    .privacy-title,
+    .term-title{
+        padding-bottom: 25px;
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-align: left;
+        border-bottom: 1px solid #9a9a9a;
+    }
+    .privacy-content,
+    .term-content{
+        text-align: left;
+        font-size: .95rem;
+        font-weight: 600;
+        padding-bottom: 75px;
+
+        .con-title {
+            margin: 25px 0 10px;
+        }
+        .content1 {
+            margin: 0 0 10px;
+            padding: 0 0 0 20px;
+            line-height: 1.8;
+            font-size: .85rem;
+            font-weight: 400;
+        }
+        .content2 {
+            margin: 5px 0 0;
+            padding: 0 0 0 15px;
+            line-height: 1.8;
+            font-size: .8rem;
+            font-weight: 300;
+        }
+    }
+}

@@ -1,0 +1,190 @@
+.member {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+
+    .main-back {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 10px 25px;
+        font-size: .9rem;
+        color: #363636;
+        font-weight: 700;
+        border: 1px solid #dbdbdb;
+        border-radius: 4px;
+        background: #fff;
+        transition: background .4s;
+
+        &:hover {
+            background: #f0f0f0;
+        }
+    }
+
+    .member-form {
+        padding: 100px 0 150px;
+        width: 340px;
+
+        form {
+            input {
+                display: block;
+                margin: 15px 0 0;
+                padding: 0 10px;
+                width: 100%;
+                height: 45px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+
+            }
+            
+            .chkbox {
+                margin: 20px 0 0;
+                text-align: left;
+                
+                input[type='checkbox'] {
+                    display: inline;
+                    margin: 0;
+                    width: auto;
+                    height: auto;
+    
+                    & + label {
+                        margin: 0 0 0 5px;
+                        font-size: .95rem;
+                        color: #2b2b2b;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            button {
+                display: block;
+                margin: 25px 0 0;
+                width: 100%;
+                height: 48px;
+                font-size: 14px;
+                color: #fff;
+                font-weight: 700;
+                background: $primary-color;
+                border: 0;
+                border-radius: 4px;
+                transition: background .4s;
+
+                &:hover {
+                    background: $primary-color-hover;
+                }
+            }
+        }
+
+        .resetpassword-absence,
+        .login-absence {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .resetpassword-absence {
+            margin: 20px 0 0;
+            
+            a {
+                font-size: .85rem;
+                color: $primary-color;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            button {
+                padding: 0 20px;
+                height: 45px;
+                font-size: .9rem;
+                color: #fff;
+                background: $primary-color;
+                border: 0;
+                border-radius: 4px;
+                transition: background .4s;
+
+                &:hover {
+                    background: $primary-color-hover;
+                }
+            }
+        }
+
+        .login-absence {
+            margin: 10px 0 0;
+            height: 30px;
+
+            div {
+                label {
+                    margin: 0 0 0 5px;
+                    font-size: .875rem;
+                    color: #2b2b2b;
+                    cursor: pointer;
+                }    
+            }
+            
+            ul {
+                display: flex;
+
+                li {
+                    margin: 0 0 0 10px;
+                    font-size: .87rem;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+
+                    a {
+                        color: #2b2b2b;
+
+                        &:hover {
+                            color: $primary-color;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+
+        .signup-absence {
+            margin: 15px 0 0;
+            color: #666;
+            
+            a {
+                margin: 0 0 0 10px;
+                color: $primary-color;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .form-logo {
+        a {
+            font-size: 30px;
+            color: #000;
+
+            img {
+                max-width: 150px;
+            }
+        }
+    }
+
+    .form-title {
+        margin: 35px 0 10px;
+    }
+
+    .form-sub {
+        margin: 20px 0 0;
+        line-height: 1.8;
+        font-size: .8rem;
+        color: #666;
+    }
+}

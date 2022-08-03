@@ -1,0 +1,122 @@
+.lecture {
+    background: rgb(23, 23, 23);
+
+    .lecture-detail {
+        display: flex;
+        align-items: stretch;
+
+        .cont {
+            width: 100%;
+
+            .lecture-head {
+                display: flex;
+                align-items: center;
+                height: 52px;
+                background: rgb(23, 23, 23);
+        
+                h2 {
+                    position: relative;
+                    padding: 0 1rem;
+                    height: 100%;
+                    line-height: 52px;
+                    font-size: 1rem;
+                    color: #fff;
+                    background: rgb(33, 37, 41);
+        
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: -52px;
+                        border: 26px solid transparent;
+                        border-left-color: rgb(33, 37, 41);
+                    }
+                }
+            }
+
+            
+            .player {
+    
+                > input {
+                    display: block;
+                    margin: 10px 0;
+                    padding: 0 10px;
+                    width: 100%;
+                    font-size: 1rem;
+                    color: #fff;
+                    background: transparent;
+                    border: 0;
+                }
+    
+                video {
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
+        
+
+        .lecture-nav {
+            // position: fixed;
+            // top: 65px;
+            // right: 0;
+            width: 480px;
+            background: #fff;
+
+            .info {
+                position: relative;
+                padding: 0 1.3rem 1.5rem;
+
+                p {
+                    padding: 1rem 0;
+                    line-height: 1.5;
+                    font-size: 1.4rem;
+                    color: #313131;
+                    font-weight: 700;
+                }
+
+                h5 {
+                    margin: 0 0 1rem;
+                    line-height: 1.5;
+                    font-size: 1.1rem;
+                    color: #444;
+                    letter-spacing: -.3px;
+                }
+
+                div {
+                    padding: 0 0 1.5rem;
+
+                    span {
+                        display: block;
+                        margin: 0 0 3px;
+                        line-height: 1.47;
+                        font-size: .9rem;
+                        color: rgb(73, 80, 87);
+                        letter-spacing: -.3px;
+                    }
+
+                    border-bottom: 6px solid rgb(233, 236, 239);
+                }
+            }
+
+            > ul {
+                overflow-y: auto;
+
+                li {
+                    padding: 1rem 1.3rem;
+                    line-height: 1.47;
+                    font-size: 15px;
+                    color: rgb(33, 37, 41);
+                    letter-spacing: -.3px;
+                    cursor: pointer;
+
+                    &.on {
+                        background: rgb(229, 245, 247);
+                        border-left: 6px solid rgb(69, 154, 161);
+                    }
+                }
+            }
+        }
+
+    }
+}
