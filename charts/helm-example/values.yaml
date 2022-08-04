@@ -7,7 +7,7 @@ replicas:
   revisionHistoryLimit: 0
 
 image:
-  version: main-afa25ff
+  version: main-7059169
   repository: 142373294051.dkr.ecr.us-east-1.amazonaws.com/frontend
   pullPolicy: IfNotPresent
 
