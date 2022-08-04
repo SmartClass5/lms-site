@@ -19,7 +19,13 @@ jobs:
           jq -r 'to_entries|map("\(.key)=\(.value|tostring)")|.[]' <<< "$NODE_ENV" > .env
         env:
           NODE_ENV: ${{ toJson(secrets) }}
-        
+          
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.4.1
+        with:
+          node-version: 16.16.0
+          cache-dependency-path: ./package.json
+          
       - name: Set Outputs
         id: vars
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
