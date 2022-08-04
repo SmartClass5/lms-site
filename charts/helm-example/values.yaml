@@ -7,7 +7,7 @@ replicas:
   revisionHistoryLimit: 0
 
 image:
-  version: main-3fa92f3
+  version: main-4de1f55
   repository: 142373294051.dkr.ecr.us-east-1.amazonaws.com/lms-site
   pullPolicy: IfNotPresent
 
