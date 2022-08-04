@@ -64,9 +64,9 @@ jobs:
         run: |
           git_hash=$(git rev-parse --short "$GITHUB_SHA")
           echo git_hash
-          version=$(cat ./lmssite-chart/values.yaml | grep version: | awk '{print $2}')
-          sed -i "s/$version/${GITHUB_REF##*/}-$git_hash/" ./lmssite-chart/values.yaml
-          #sed -i "s/$repository/${{ secrets.REGISTRY }}/${{secrets.REPOSITORY}}/" ./lmssite-chart/values.yaml
+          version=$(cat ${{ secrets.HELM_PATH }}/values.yaml | grep version: | awk '{print $2}')
+          sed -i "s/$version/${GITHUB_REF##*/}-$git_hash/" ${{ secrets.HELM_PATH }}/values.yaml
+          #sed -i "s/$repository/${{ secrets.REGISTRY }}/${{secrets.REPOSITORY}}/" ${{ secrets.HELM_PATH }}/values.yaml
 
       - name: Commit and push changes
         uses: devops-infra/action-commit-push@v0.3
