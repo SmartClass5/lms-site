@@ -11,7 +11,7 @@ replicas:
   revisionHistoryLimit: 0
 
 image:
-  version: main-aca5b70
+  version: main-e45ec73
   repository: 142373294051.dkr.ecr.us-east-1.amazonaws.com/lms-site
   pullPolicy: IfNotPresent
 
