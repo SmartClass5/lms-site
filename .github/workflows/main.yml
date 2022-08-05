@@ -80,3 +80,4 @@ jobs:
           github_token: ${{ secrets.GIT_ACCESS_TOKEN }}
           commit_message: Image version updated
     
+    
