@@ -18,3 +18,4 @@ image:
 service:
   type: NodePort
   port: 80
+  containerPort: 30000
