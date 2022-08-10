@@ -6,7 +6,7 @@ on:
 
 jobs:
   push_to_registry:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
@@ -61,7 +61,7 @@ jobs:
   deploy_to_k8s:
     name: Edit deployment.yaml and values.yaml
     needs: ["push_to_registry"]
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
