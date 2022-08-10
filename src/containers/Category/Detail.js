@@ -29,7 +29,6 @@ useEffect(()=>{
     <div className='course-detail'>
         <h2>{category} 강의!</h2>
         <div className='courses_container'>
-
           <div className='columns'>
         {lectureList && lectureList.map((lecture,key)=>{
           return (
