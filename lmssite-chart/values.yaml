@@ -11,7 +11,7 @@ replicas:
   revisionHistoryLimit: 0
 
 image:
-  version: main-722b669
+  version: main-271310d
   repository: 142373294051.dkr.ecr.us-east-1.amazonaws.com/lms-site
   pullPolicy: IfNotPresent
 
