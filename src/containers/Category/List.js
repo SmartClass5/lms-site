@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import {
-  Link
+  Link,
+  useHistory,
+  useParams
 } from "react-router-dom";
 import Detail from './Detail';
 
 const List = ({ match }) => {
   const [category, setCategory] = useState('');
 
-  const [toggle, setToggle] = useState(false)
-
-  // useEffect(() => {
-  //   console.log(toggle,'토글 변경?????')
-  // },[toggle])
-
+  const [toggle, setToggle] = useState({
+    status: true,
+    category: "전체"
+  })
+  let { id } = useParams();
+  let history = useHistory();
   useEffect(() => {
     //console.log(match)
     switch (match.url.replace('/category', '')) {
@@ -40,14 +42,14 @@ const List = ({ match }) => {
         <div className='left_container'>
           <div className='oneDepth'>
             <div>
-              <button className={toggle? 'on':''} onClick={() => setToggle(!toggle)}>
+              <button className={toggle ? 'on' : ''} onClick={() => setToggle(!toggle)}>
                 <Link to='/category'>전체</Link>
               </button>
-              
+
               <div className={toggle ? 'twoDepth' : 'twoDepth cateClose'}>
-                <Link to='/category/programming' className={category === '프로그래밍' ? 'active':''}>프로그래밍</Link>
-                <Link to='/category/business' className={category === '비즈니스' ? 'active':''}>비즈니스</Link>
-                <Link to='/category/design' className={category === '디자인' ? 'active':''}>디자인</Link>
+                <Link to='/category/programming' className={category === '프로그래밍' ? 'active' : ''}>프로그래밍</Link>
+                <Link to='/category/business' className={category === '비즈니스' ? 'active' : ''}>비즈니스</Link>
+                <Link to='/category/design' className={category === '디자인' ? 'active' : ''}>디자인</Link>
               </div>
             </div>
 

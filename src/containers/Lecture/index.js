@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
-import Detail from './Detail';
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useHistory,
+  useParams
+} from "react-router-dom";
+import LectureRoute from './Route';
 const Lecture = ({ match }) => {
-    // useEffect(() => {
-    //     console.log(match)
-
-    //   }, [match])
+  let { id } = useParams();
+  useEffect(() => {
+    console.log(match, 'match')
+  }, [])
   return (
     <div className='lecture'>
-        <Route path={`${match.path}/:id`} component={Detail} />
+      <Route path={`${match.path}/:id`} component={LectureRoute} />
     </div>
   )
 }

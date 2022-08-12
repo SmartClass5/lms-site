@@ -1,32 +1,49 @@
 import React from 'react';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import axios from "axios";
+import { useHistory } from "react-router-dom";
+import swal from 'sweetalert';
+import { API } from '../../config/config';
+import _ from 'lodash';
+import { AuthContext } from '../../Context/AuthContext';
 
 const Login = () => {
-  const userRef = useRef();
-  const errRef = useRef();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const { authState, setAuthState } = useContext(AuthContext);
+  let history = useHistory();
+  const login = () => {
+    const data = { username: username, password: password };
+    console.log(data)
+    axios
+      .post(`${_.get(API, 'authurl')}/auth/login`, data)
+      .then((response) => {
+        if (_.get(response, 'status') == 200) {
+          swal({
+            title: "로그인 완료",
+            text: `${_.get(response, 'data.msg')}`,
+            icon: "success",
+            button: "확인"
+          }).then(() => {
+            localStorage.setItem("accessToken", response.data.token);
+            setAuthState({
+              username: username,
+              status: true
+            })
+            history.push("/");
+          })
 
-  const [user, setUser] = useState('');
-  const [pwd, setPwd] = useState('');
-  const [errMsg, setErrMsg] = useState('');
-  const [success, setSuccess] = useState('');
-
-  useEffect(() => {
-    userRef.current.focus();
-  }, [])
-
-  useEffect(() => {
-    console.log(user)
-    setErrMsg('');
-  }, [user, pwd])
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(user, pwd);
-    setUser('');
-    setPwd('');
-    setSuccess(true);
-  }
+        } else {
+          swal({
+            title: "로그인 실패",
+            text: `${_.get(response, 'data.msg')}`,
+            icon: "error",
+            button: "확인"
+          })
+        }
+      });
+  };
   return (
     <div className='login member-form'>
       <h2 className='form-logo'>
@@ -38,39 +55,38 @@ const Login = () => {
 
       <h3 className='form-title'>로그인</h3>
 
-      <form onSubmit={handleSubmit} className='login-form'>
+      <div className='login-form'>
         <label htmlFor='username'></label>
         <input
-          type='text'
-          id="username"
-          ref={userRef}
+          type="text"
           autoComplete="off"
-          placeholder='아이디/이메일'
-          onChange={(e) => setUser(e.target.value)}
-          value={user}
+          placeholder='아이디'
+          onChange={(event) => {
+            setUsername(event.target.value);
+          }}
           required
         />
         <label htmlFor='password'></label>
         <input
-          type='password'
-          id="password"
+          type="password"
+          autoComplete="off"
           placeholder='비밀번호'
-          onChange={(e) => setPwd(e.target.value)}
-          value={pwd}
+          onChange={(event) => {
+            setPassword(event.target.value);
+          }}
           required
         />
 
-        <button> 로그인</button>
-      </form>
-      <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive" >{errMsg}</p>
+        <button onClick={login}> 로그인</button>
+      </div>
       <div className='login-absence'>
         <div>
-          <input type="checkbox" id='loginChk' />
-          <label htmlFor='loginChk'>로그인 상태 유지</label>
+          {/* <input type="checkbox" id='loginChk' />
+          <label htmlFor='loginChk'>로그인 상태 유지</label> */}
         </div>
 
         <ul>
-          <li><Link to='/member/resetpassword'>비밀번호 재설정</Link></li>
+          {/* <li><Link to='/member/resetpassword'>비밀번호 재설정</Link></li> */}
           <li><Link to='/member/signup'>회원가입</Link></li>
         </ul>
       </div>

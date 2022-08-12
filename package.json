@@ -7,6 +7,7 @@
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
+    "formik": "^2.2.9",
     "lodash": "^4.17.21",
     "node-sass": "^7.0.1",
     "react": "^18.0.0",
@@ -22,7 +23,8 @@
     "reactjs-popup": "^2.0.5",
     "slick-carousel": "^1.8.1",
     "sweetalert": "^2.1.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "export PORT=30000 && react-scripts start",
