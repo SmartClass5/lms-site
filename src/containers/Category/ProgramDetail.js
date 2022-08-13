@@ -78,8 +78,11 @@ const ProgramDetail = ({ }) => {
       {/*  */}
       {_.get(authState, 'status') && (
         (_.get(learner, 'username') == _.get(authState, 'username')) ?
-          <div>
-            <button onClick={() => { history.push(`/lecture/${_.get(lecture, '_id')}`) }} >수강 페이지 이동</button>
+          <div style={{position: `fixed`, right: `3vw`, backgroundColor:'white', width:"300px", borderRadius: `15px`}}>
+            <div>
+              <p style={{margin:"15px", paddingTop: '10px', fontSize: `20px`}}>FREE</p>
+            </div>
+            <button onClick={() => { history.push(`/lecture/${_.get(lecture, '_id')}`) }} style={{ borderRadius: `15px`, margin: `15px 15px` , textDecoration: `none`, textAlign: `center`, backgroundColor: "#4CAF50" ,border: 'none', color: 'white',  padding: `15px 100px`, display: `inline-block` }} >수강 페이지 이동</button>
           </div> :
           <div>
             <button onClick={applylecture} >수강 신청</button>
@@ -90,8 +93,8 @@ const ProgramDetail = ({ }) => {
       <div className='tab-container'>
         <div className="wrapper">
           <ul>
-            <li className="active"><a href='#courseTab1'>강좌소개</a></li>
-            <li><a href='#courseTab2'>교육과정</a></li>
+            <li className="active"><a href='#courseTab1' style={{ color:`black`,textDecoration: `none` }}>강좌소개</a></li>
+            <li><a href='#courseTab2' style={{color:`black`,textDecoration: `none`}}>교육과정</a></li>
             {/* <li><a href='#courseTab3'>강의자 소개</a></li> */}
             {/* <li><a href='#courseTab4'>강좌 후기</a></li> */}
           </ul>
