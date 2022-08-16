@@ -11,7 +11,7 @@ replicas:
   revisionHistoryLimit: 0
 
 image:
-  version: main-bcc243b
+  version: main-c4df131
   repository: 142373294051.dkr.ecr.us-east-1.amazonaws.com/lms-site
   pullPolicy: IfNotPresent
 
